@@ -1,0 +1,27 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3"> 
+	<h1>{{ title }}</h1>
+	{% if confirmation %}
+		<p>{{ confirmation }}</p>
+	{% endif %}
+
+	{% if form %}
+		<form method='POST' action=''> <!--POST data, action="": already contacturl.--> 
+ 		{% csrf_token %}
+<!--<form role="form" action="" method="post">
+    {% csrf_token %}-->
+    	{{ form.as_p }}
+    	<button type="submit">Submit</button>
+		</form>
+	{% endif %}
+</div>
+</div>
+{% endblock content %}
+
+
+

@@ -1,0 +1,47 @@
+<!--================ Start Header Menu Area =================-->
+{% load static %}
+	<header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/Fevicon.png' %}" alt=""><b>Estore</b></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+              <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+              <li class="nav-item submenu dropdown">
+                <a href="{% url 'store' %}" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Store</a>              
+							</li>
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Blog</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'single-blog' %}">Blog Details</a></li>
+                </ul>
+							</li>
+							<li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Account</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                  <!--<li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>-->
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+	<!--================ End Header Menu Area =================-->
+
+  <main class="site-main">
