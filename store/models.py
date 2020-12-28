@@ -95,13 +95,3 @@ class ShippingAddress(models.Model):
 
 	def __str__(self):
 		return self.address.__str__()
-
-#class Contact(models.Model):
-#    name = models.CharField(max_length=50)
-#    email = models.EmailField()
-#    message = models.TextField()
-
-
-
-
-	
