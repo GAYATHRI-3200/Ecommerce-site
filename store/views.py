@@ -45,18 +45,7 @@ def cart(request):
 	data= cartData(request)
 	cartItems= data['cartItems']
 	order= data['order']
-	items= data['items']
-	#if request.user.is_authenticated:
-	#	customer = request.user.customer
-	#	order, created = Order.objects.get_or_create(customer=customer, complete=False)
-	#	items = order.orderitem_set.all()
-	#else:
-		#Create empty cart for now for non-logged in user
-	#	items = []
-	#	order = {'get_cart_total':0, 'get_cart_items':0}
-
-	
-	
+	items= data['items']		
 	context = {'items' :items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/cart.html', context)
 
@@ -134,27 +123,6 @@ def processOrder(request):
 
 
 	return JsonResponse('payment complete!!!', safe=False)
-
-#def register(request):
-#	context = {}
-#	if request.POST:
-#		form = UserRegisterForm(request.POST)
-#		if form.is_valid():
-#			form.save()
-#			email = form.cleaned_data.get('email')
-#			raw_password = form.cleaned_data.get('password1')
-#			user = form.save()
-#			#user = authenticate(email=email, password=raw_password)
-#			#login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-#			login(request,user)
-#			return redirect('home')
-#		else:
-#			context['registration_form'] = form
-#	else: 
-#		form = UserRegisterForm() 
-#		
-#		context['registration_form'] = form
-#	return render(request, 'store/register.html',context)	
 
 def register(request):
     if request.method == 'POST':
