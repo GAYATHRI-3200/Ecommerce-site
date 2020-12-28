@@ -23,8 +23,3 @@ class ContactForm(forms.Form): #new form called contactForm
  	UserEmail = forms.EmailField(required=True)
  	Message = forms.CharField(required=True,widget=forms.Textarea)
 
-#class ContactForm(forms.Form):
-#	class Meta:
-#		model = Contact
-#		fields = '__all__' #new form called contactForm
- 	
